@@ -1,0 +1,20 @@
+<div class="superadmin-dashboard">
+  <h2>Panel de superadmin</h2>
+  @if (loading()) { <p>Cargando datos...</p> }
+  <div class="stats">
+    <div class="stat-card"><h3>Usuarios</h3><span>{{ users().length }}</span></div>
+    <div class="stat-card"><h3>Reservas totales</h3><span>{{ bookingCount() }}</span></div>
+  </div>
+  <a routerLink="/superadmin/roles" class="btn-primary" style="margin-top:1.5rem;display:inline-block">Gestionar roles</a>
+  <div class="users-table" style="margin-top:2rem">
+    <h3>Usuarios del sistema</h3>
+    <table>
+      <thead><tr><th>Email</th><th>Rol</th><th>Activo</th></tr></thead>
+      <tbody>
+        @for (user of users(); track user.id) {
+          <tr><td>{{ user.email }}</td><td>{{ user.role }}</td><td>{{ user.isActive ? '✅' : '❌' }}</td></tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

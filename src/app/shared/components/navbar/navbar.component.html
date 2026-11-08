@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <a routerLink="/" class="navbar-brand">MovPrimate 🏋️</a>
+  <div class="navbar-links">
+    @if (!auth.isLoggedIn()) {
+      <a routerLink="/auth/login" routerLinkActive="active">Iniciar sesión</a>
+      <a routerLink="/auth/register" routerLinkActive="active">Registrarse</a>
+    } @else {
+      @if (isAlumno()) {
+        <a routerLink="/bookings" routerLinkActive="active">Mis reservas</a>
+      }
+      @if (isAdmin()) {
+        <a routerLink="/admin" routerLinkActive="active">Admin</a>
+      }
+      @if (isSuperadmin()) {
+        <a routerLink="/superadmin" routerLinkActive="active">Superadmin</a>
+      }
+      <a routerLink="/profile" routerLinkActive="active">Perfil</a>
+      <button (click)="logout()">Cerrar sesión</button>
+    }
+  </div>
+</nav>

@@ -1,0 +1,32 @@
+<div class="role-management">
+  <h2>Gestión de roles</h2>
+  <p class="info">Solo el superadmin puede cambiar roles y asignar clases disponibles.</p>
+  <div class="form-group"><label>User ID</label><input [(ngModel)]="userId" name="userId" placeholder="ID del usuario" /></div>
+
+  <section>
+    <h3>Cambiar rol</h3>
+    <div class="form-group">
+      <label>Nuevo rol</label>
+      <select [(ngModel)]="newRole" name="newRole">
+        @for (r of roles; track r) { <option [value]="r">{{ r }}</option> }
+      </select>
+    </div>
+    <div class="form-group"><label>Razón</label><input [(ngModel)]="reason" name="reason" /></div>
+    <button (click)="changeRole()" [disabled]="loading()" class="btn-primary">Cambiar rol</button>
+  </section>
+
+  <section style="margin-top:2rem">
+    <h3>Clases disponibles</h3>
+    <div class="form-group"><label>Cantidad</label><input type="number" [(ngModel)]="availableClasses" name="availableClasses" /></div>
+    <button (click)="updateClasses()" [disabled]="loading()" class="btn-primary">Actualizar</button>
+  </section>
+
+  <section style="margin-top:2rem">
+    <h3>Desactivar usuario</h3>
+    <button (click)="deactivate()" [disabled]="loading()" class="btn-danger">Desactivar usuario</button>
+  </section>
+
+  @if (msg()) {
+    <p [class]="success() ? 'success-msg' : 'error-msg'" style="margin-top:1rem">{{ msg() }}</p>
+  }
+</div>

@@ -1,0 +1,36 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background: #1a1a2e;
+  color: white;
+
+  .navbar-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #e94560;
+    text-decoration: none;
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    a {
+      color: #ccc;
+      text-decoration: none;
+      &:hover, &.active { color: #e94560; }
+    }
+
+    button {
+      background: #e94560;
+      color: white;
+      border: none;
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+}

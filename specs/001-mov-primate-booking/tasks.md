@@ -1,4 +1,4 @@
-# Tasks: Plataforma de reservas del gimnasio MovPrimate
+﻿# Tasks: Plataforma de reservas del gimnasio MovPrimate
 
 **Input**: Design documents from `/specs/001-mov-primate-booking/`
 
@@ -18,10 +18,10 @@
 
 **Purpose**: Prepare the Angular app structure and configuration for the booking feature
 
-- [ ] T001 Create Angular project structure under `src/app/features` for landing, auth, booking, admin, superadmin, and role management
-- [ ] T002 Configure routing, shared modules, and bootstrap layout
-- [ ] T003 [P] Set up environment configuration for API/BFF endpoints
-- [ ] T004 [P] Add base styling and reusable layout components for the app shell
+- [x] T001 Create Angular project structure under `src/app/features` for landing, auth, booking, admin, superadmin, and role management
+- [x] T002 Configure routing, shared modules, and bootstrap layout
+- [x] T003 [P] Set up environment configuration for API/BFF endpoints
+- [x] T004 [P] Add base styling and reusable layout components for the app shell
 
 ---
 
@@ -29,17 +29,17 @@
 
 **Purpose**: Core UI infrastructure that enables all flows
 
-- [ ] T005 Create auth state and session management for student users
-- [ ] T006 [P] Implement API client and models for booking contracts
-- [ ] T007 [P] Implement generic error and loading handling
-- [ ] T008 Configure role-aware route guards and access control
-- [ ] T009 Create shared components for cards, tables, forms, and notifications
+- [x] T005 Create auth state and session management for student users
+- [x] T006 [P] Implement API client and models for booking contracts
+- [x] T007 [P] Implement generic error and loading handling
+- [x] T008 Configure role-aware route guards and access control
+- [x] T009 Create shared components for cards, tables, forms, and notifications
 
 **Checkpoint**: Foundation ready - the main feature flows can now begin.
 
 ---
 
-## Phase 3: User Story 1 - Landing page pública (Priority: P1) 🎯 MVP
+## Phase 3: User Story 1 - Landing page pÃºblica (Priority: P1) ðŸŽ¯ MVP
 
 **Goal**: Exponer una propuesta clara del gimnasio y un CTA hacia el registro o la reserva
 
@@ -47,16 +47,16 @@
 
 ### Implementation for User Story 1
 
-- [ ] T010 [P] [US1] Create landing page hero, services section, and CTA in `src/app/features/landing/`
-- [ ] T011 [US1] Implement navigation and responsive sections for the public experience
-- [ ] T012 [US1] Connect CTA to auth flow or booking entry flow
-- [ ] T013 [US1] Add content validation and accessibility checks
+- [x] T010 [P] [US1] Create landing page hero, services section, and CTA in `src/app/features/landing/`
+- [x] T011 [US1] Implement navigation and responsive sections for the public experience
+- [x] T012 [US1] Connect CTA to auth flow or booking entry flow
+- [x] T013 [US1] Add content validation and accessibility checks
 
 **Checkpoint**: The public landing experience is functional and testable independently.
 
 ---
 
-## Phase 4: User Story 2 - Alumno crea cuenta y reserva sesión de 1 hora (Priority: P1)
+## Phase 4: User Story 2 - Alumno crea cuenta y reserva sesiÃ³n de 1 hora (Priority: P1)
 
 **Goal**: Enable student sign-in and booking flow without external messaging
 
@@ -64,12 +64,12 @@
 
 ### Implementation for User Story 2
 
-- [ ] T014 [P] [US2] Implement student login/registration forms in `src/app/features/auth/`
-- [ ] T015 [P] [US2] Create profile/session state handling after login
-- [ ] T016 [US2] Implement availability screen and slot selection in `src/app/features/bookings/`
-- [ ] T017 [US2] Implement reservation creation with validation against business rules
-- [ ] T018 [US2] Handle pending reservation state and UI feedback for duplicates/conflicts
-- [ ] T019 [US2] Implement student reservation history and detail view
+- [x] T014 [P] [US2] Implement student login/registration forms in `src/app/features/auth/`
+- [x] T015 [P] [US2] Create profile/session state handling after login
+- [x] T016 [US2] Implement availability screen and slot selection in `src/app/features/bookings/`
+- [x] T017 [US2] Implement reservation creation with validation against business rules
+- [x] T018 [US2] Handle pending reservation state and UI feedback for duplicates/conflicts
+- [x] T019 [US2] Implement student reservation history and detail view
 
 **Checkpoint**: Student reservation flow works independently and creates valid pending reservations.
 
@@ -83,30 +83,30 @@
 
 ### Implementation for User Story 3
 
-- [ ] T020 [P] [US3] Create admin dashboard with pending booking list in `src/app/features/admin/`
-- [ ] T021 [US3] Implement reservation detail, status mapping, and approval/rejection actions
-- [ ] T022 [US3] Enforce role guard and prevent unauthorized access
-- [ ] T023 [US3] Show success and error states for validation actions
-- [ ] T024 [US3] Connect the admin flow to BFF/API contract responses
+- [x] T020 [P] [US3] Create admin dashboard with pending booking list in `src/app/features/admin/`
+- [x] T021 [US3] Implement reservation detail, status mapping, and approval/rejection actions
+- [x] T022 [US3] Enforce role guard and prevent unauthorized access
+- [x] T023 [US3] Show success and error states for validation actions
+- [x] T024 [US3] Connect the admin flow to BFF/API contract responses
 
 **Checkpoint**: The admin validation flow is secure and testable.
 
 ---
 
-## Phase 6: User Story 4 - Superadmin supervisa la operación y gestiona roles (Priority: P1)
+## Phase 6: User Story 4 - Superadmin supervisa la operaciÃ³n y gestiona roles (Priority: P1)
 
 **Goal**: Give the gym owner visibility and operational control, including explicit role assignment
 
-**Independent Test**: El superadmin puede consultar usuarios, estados y reservas según permisos y reasignar un usuario de alumno a profesor/admin cuando el negocio lo requiera.
+**Independent Test**: El superadmin puede consultar usuarios, estados y reservas segÃºn permisos y reasignar un usuario de alumno a profesor/admin cuando el negocio lo requiera.
 
 ### Implementation for User Story 4
 
-- [ ] T025 [P] [US4] Create superadmin dashboard in `src/app/features/superadmin/`
-- [ ] T026 [US4] Implement overview of users, reservations, and per-role visibility
-- [ ] T027 [US4] Add filters and exception monitoring for operational review
-- [ ] T028 [US4] Restrict actions and data access based on app-level role rules
-- [ ] T029 [US4] Implement role management in `src/app/features/roles/` to convert a user from alumno to profesor/admin and keep audit tracking
-- [ ] T030 [US4] Validate that the role change is only allowed for the superadmin and is logged as an auditable action
+- [x] T025 [P] [US4] Create superadmin dashboard in `src/app/features/superadmin/`
+- [x] T026 [US4] Implement overview of users, reservations, and per-role visibility
+- [x] T027 [US4] Add filters and exception monitoring for operational review
+- [x] T028 [US4] Restrict actions and data access based on app-level role rules
+- [x] T029 [US4] Implement role management in `src/app/features/roles/` to convert a user from alumno to profesor/admin and keep audit tracking
+- [x] T030 [US4] Validate that the role change is only allowed for the superadmin and is logged as an auditable action
 
 **Checkpoint**: Superadmin view and role management are role-protected and operationally useful.
 
@@ -120,10 +120,10 @@
 
 ### Implementation for User Story 5
 
-- [ ] T031 [P] [US5] Implement notification center or in-app status updates
-- [ ] T032 [US5] Add status badges and timeline for reservation lifecycle
-- [ ] T033 [US5] Connect reservation update events to UI refresh behavior
-- [ ] T034 [US5] Ensure clear messages when a reservation is approved, rejected, or pending
+- [x] T031 [P] [US5] Implement notification center or in-app status updates
+- [x] T032 [US5] Add status badges and timeline for reservation lifecycle
+- [x] T033 [US5] Connect reservation update events to UI refresh behavior
+- [x] T034 [US5] Ensure clear messages when a reservation is approved, rejected, or pending
 
 **Checkpoint**: Student status updates are visible and understandable.
 
@@ -133,11 +133,11 @@
 
 **Purpose**: Final validation, UX improvements, and quality checks
 
-- [ ] T035 [P] Accessibility review across landing, auth, booking, admin, superadmin, and role management
-- [ ] T036 [P] Responsive review for mobile and desktop
-- [ ] T037 Error handling QA for empty states, failure responses, and permission denial
-- [ ] T038 Run end-to-end flow validation: student registration → booking → admin validation → final status
-- [ ] T039 Final documentation and quickstart validation for the app feature
+- [x] T035 [P] Accessibility review across landing, auth, booking, admin, superadmin, and role management
+- [x] T036 [P] Responsive review for mobile and desktop
+- [x] T037 Error handling QA for empty states, failure responses, and permission denial
+- [x] T038 Run end-to-end flow validation: student registration â†’ booking â†’ admin validation â†’ final status
+- [x] T039 Final documentation and quickstart validation for the app feature
 
 ---
 
@@ -176,24 +176,25 @@
 
 ## Tareas globales obligatorias (complementarias)
 
-- [ ] T040 Incorporar rol `usuario` como estado inicial del registro en frontend.
-- [ ] T041 Agregar flujo de desactivación de usuario desde panel superadmin.
-- [ ] T042 Asegurar selección obligatoria de profesor en creación de reserva.
-- [ ] T043 Restringir anulación de reserva a ventanas >= 1 hora antes del inicio (usando timezone del servidor).
-- [ ] T044 Implementar UI de asistencia para admin: asistió/no asistió/justificó ausencia (marcable en cualquier momento post-sesión).
-- [ ] T045 Implementar panel superadmin con total de clases asistidas por alumno.
-- [ ] T046 Reflejar estado de correo de confirmación en detalle de reserva.
-- [ ] T047 [P] [US2] Implementar validación de cupo máximo (4 alumnos/profesor/horario) en disponibilidad y creación de reserva; bloquear slot cuando cupo esté lleno.
-- [ ] T048 [P] [US3] Implementar ventana de anulación: validar en endpoint de cancelación que `now() < (start_time - 60 min)` según timezone del servidor; desactivar botón en UI si < 1h; mostrar error claro.
-- [ ] T049 [US5] Implementar contador de reservas totales en perfil de alumno; actualizar en tiempo real cuando se crea/cancela reserva.
-- [ ] T050 [US6] Integrar sistema de notificación por email + in-app: email confirmación de entrega (primaria), in-app banner/notification center (secundaria) cuando estado cambió a pendiente/confirmado/cancelado/rechazado.
+- [x] T040 Incorporar rol `usuario` como estado inicial del registro en frontend.
+- [x] T041 Agregar flujo de desactivaciÃ³n de usuario desde panel superadmin.
+- [x] T042 Asegurar selecciÃ³n obligatoria de profesor en creaciÃ³n de reserva.
+- [x] T043 Restringir anulaciÃ³n de reserva a ventanas >= 1 hora antes del inicio (usando timezone del servidor).
+- [x] T044 Implementar UI de asistencia para admin: asistiÃ³/no asistiÃ³/justificÃ³ ausencia (marcable en cualquier momento post-sesiÃ³n).
+- [x] T045 Implementar panel superadmin con total de clases asistidas por alumno.
+- [x] T046 Reflejar estado de correo de confirmaciÃ³n en detalle de reserva.
+- [x] T047 [P] [US2] Implementar validaciÃ³n de cupo mÃ¡ximo (4 alumnos/profesor/horario) en disponibilidad y creaciÃ³n de reserva; bloquear slot cuando cupo estÃ© lleno.
+- [x] T048 [P] [US3] Implementar ventana de anulaciÃ³n: validar en endpoint de cancelaciÃ³n que `now() < (start_time - 60 min)` segÃºn timezone del servidor; desactivar botÃ³n en UI si < 1h; mostrar error claro.
+- [x] T049 [US5] Implementar contador de reservas totales en perfil de alumno; actualizar en tiempo real cuando se crea/cancela reserva.
+- [x] T050 [US6] Integrar sistema de notificaciÃ³n por email + in-app: email confirmaciÃ³n de entrega (primaria), in-app banner/notification center (secundaria) cuando estado cambiÃ³ a pendiente/confirmado/cancelado/rechazado.
 
 ---
 
 ## Clarifications Integration Notes
 
-- **T047 (Cupo)**: Maps to FR-006, SC-002, global rule "4 alumnos máx". Implements hard constraint in both BFF/API and frontend.
-- **T048 (Anulación)**: Maps to T043 expanded, clarified with server timezone. Affects both backend validation and frontend UX (button enable/disable).
+- **T047 (Cupo)**: Maps to FR-006, SC-002, global rule "4 alumnos mÃ¡x". Implements hard constraint in both BFF/API and frontend.
+- **T048 (AnulaciÃ³n)**: Maps to T043 expanded, clarified with server timezone. Affects both backend validation and frontend UX (button enable/disable).
 - **T049 (Contador)**: Maps to global rule "Perfil con contador". Pure frontend data binding + subscription to reservation changes.
 - **T050 (Notificaciones)**: Maps to FR-018 (new), clarified as "email primary + in-app secondary". Requires email service integration (can be BFF responsibility) and in-app notification center (frontend).
+
 

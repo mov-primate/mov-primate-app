@@ -1,0 +1,30 @@
+<div class="slot-search">
+  <h3>Consultar disponibilidad</h3>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Fecha</label>
+      <input type="date" [(ngModel)]="date" name="date" />
+    </div>
+    <div class="form-group">
+      <label>ID Profesor</label>
+      <input type="text" [(ngModel)]="professorId" name="professorId" placeholder="ID del profesor" />
+    </div>
+    <button (click)="search()" [disabled]="loading()" class="btn-primary">Buscar</button>
+  </div>
+  @if (error()) { <p class="error-msg">{{ error() }}</p> }
+  @if (loading()) { <p>Cargando slots...</p> }
+  <div class="slots-grid">
+    @for (slot of slots(); track slot.id) {
+      <div class="slot-card" [class.unavailable]="!slot.available" (click)="select(slot)">
+        <strong>{{ slot.startAt | date:'HH:mm' }} – {{ slot.endAt | date:'HH:mm' }}</strong>
+        @if (slot.available) {
+          <span class="available">{{ slot.capacityUsed }}/{{ slot.capacityMax }} alumnos</span>
+        } @else {
+          <span class="full">Sin disponibilidad ({{ slot.reason }})</span>
+        }
+      </div>
+    } @empty {
+      <p class="empty">No hay slots para mostrar. Realiza una búsqueda.</p>
+    }
+  </div>
+</div>

@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, sans-serif; color: #333; }
+
+.auth-container {
+  display: flex; justify-content: center; padding: 3rem 1rem;
+  .auth-card {
+    width: 100%; max-width: 400px; padding: 2rem;
+    border: 1px solid #ddd; border-radius: 8px;
+    h2 { margin-bottom: 1.5rem; }
+  }
+}
+
+.form-group { margin-bottom: 1rem; label { display: block; margin-bottom: 0.4rem; font-weight: 500; } }
+input, select, textarea { width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+.form-row { display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap; }
+
+.btn-primary { background: #e94560; color: white; border: none; padding: 0.6rem 1.25rem; border-radius: 4px; cursor: pointer; font-weight: 600; &:disabled { opacity: 0.6; } }
+.btn-outline { background: transparent; color: #e94560; border: 2px solid #e94560; padding: 0.6rem 1.25rem; border-radius: 4px; cursor: pointer; font-weight: 600; text-decoration: none; }
+.btn-success { background: #198754; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; }
+.btn-danger { background: #dc3545; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; }
+
+.error-msg { color: #dc3545; font-size: 0.9rem; margin-top: 0.5rem; }
+.success-msg { color: #198754; font-size: 0.9rem; margin-top: 0.5rem; }
+.info { background: #f8f9fa; border-left: 4px solid #e94560; padding: 0.75rem 1rem; border-radius: 0 4px 4px 0; font-size: 0.9rem; }
+.empty { color: #666; font-style: italic; }
+.alert { background: #d1e7dd; border: 1px solid #badbcc; padding: 0.75rem 1rem; border-radius: 4px; margin-bottom: 1rem; }
+
+.slots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.slot-card { padding: 1rem; border: 2px solid #0d6efd; border-radius: 8px; cursor: pointer; text-align: center;
+  &.unavailable { border-color: #ccc; color: #999; cursor: not-allowed; }
+  .available { color: #198754; display: block; font-size: 0.85rem; }
+  .full { color: #dc3545; display: block; font-size: 0.85rem; }
+}
+
+.bookings-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.booking-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; }
+.actions { display: flex; gap: 0.5rem; }
+
+.stat-card { display: inline-block; padding: 1.5rem 2rem; border: 1px solid #ddd; border-radius: 8px; margin: 0.5rem; text-align: center; h3 { margin: 0 0 0.5rem; color: #666; } span { font-size: 2rem; font-weight: 700; color: #e94560; } }
+
+table { width: 100%; border-collapse: collapse; th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd; } th { background: #f8f9fa; font-weight: 600; } }
+
+.auth-link { margin-top: 1rem; font-size: 0.9rem; }

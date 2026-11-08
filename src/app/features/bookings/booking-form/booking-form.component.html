@@ -1,0 +1,16 @@
+@if (slot()) {
+  <div class="booking-confirm">
+    <h3>Confirmar reserva</h3>
+    <p><strong>Horario:</strong> {{ slot()!.startAt | date:'d/M/yyyy HH:mm' }} – {{ slot()!.endAt | date:'HH:mm' }}</p>
+    @if (!success()) {
+      @if (error()) { <p class="error-msg">{{ error() }}</p> }
+      <button (click)="confirm()" [disabled]="loading()" class="btn-primary">
+        {{ loading() ? 'Reservando...' : 'Confirmar reserva' }}
+      </button>
+    } @else {
+      <div class="success-msg">
+        ✅ Reserva creada. Estado: <strong>pendiente</strong>. Te notificaremos cuando sea confirmada.
+      </div>
+    }
+  </div>
+}

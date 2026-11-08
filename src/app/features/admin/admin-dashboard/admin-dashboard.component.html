@@ -1,0 +1,23 @@
+<div class="admin-dashboard">
+  <h2>Panel de administrador</h2>
+  @if (msg()) { <div class="alert">{{ msg() }}</div> }
+  @if (loading()) { <p>Cargando reservas pendientes...</p> }
+  <div class="bookings-list">
+    @for (booking of bookings(); track booking.id) {
+      <div class="booking-item">
+        <div>
+          <strong>{{ booking.slotStart | date:'d/M/yyyy HH:mm' }}</strong>
+          <span class="student">Alumno: {{ booking.studentId }}</span>
+          <app-status-badge [status]="booking.status" />
+        </div>
+        <div class="actions">
+          <button (click)="approve(booking.id)" class="btn-success">Aprobar</button>
+          <button (click)="reject(booking.id)" class="btn-danger">Rechazar</button>
+        </div>
+      </div>
+    } @empty {
+      @if (!loading()) { <p class="empty">No hay reservas pendientes.</p> }
+    }
+  </div>
+  <a routerLink="/admin/attendance" class="btn-outline" style="margin-top:1rem;display:inline-block">Registrar asistencia</a>
+</div>

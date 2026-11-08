@@ -1,0 +1,27 @@
+<div class="history">
+  <h2>Mis reservas</h2>
+
+  <app-slot-list (slotSelected)="onSlotSelected($event)" />
+  <app-booking-form [slot]="selectedSlot()" />
+
+  @if (loading() && bookings().length === 0) { <p>Cargando...</p> }
+  @if (error()) { <p class="error-msg">{{ error() }}</p> }
+  <div class="bookings-list">
+    @for (booking of bookings(); track booking.id) {
+      <div class="booking-item">
+        <div>
+          <strong>{{ booking.slotStart | date:'d/M/yyyy HH:mm' }}</strong>
+          <app-status-badge [status]="booking.status" />
+        </div>
+        @if (booking.status === 'pendiente' || booking.status === 'confirmado') {
+          <button (click)="cancel(booking.id)" class="btn-danger">Cancelar</button>
+        }
+      </div>
+    } @empty {
+      <p class="empty">No tienes reservas aún.</p>
+    }
+  </div>
+  @if (nextCursor()) {
+    <button (click)="load(nextCursor())" [disabled]="loading()" class="btn-outline">Cargar más</button>
+  }
+</div>
